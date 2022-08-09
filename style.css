@@ -16,7 +16,7 @@ body {
 }
 
 .button-pad > * {
-    width: 20%;
+    width: 25%;
 }
 
 button {
@@ -31,7 +31,5 @@ button {
     width: 50%;
 }
 
-#equals {
-    width: 40%;
-}
+
 
