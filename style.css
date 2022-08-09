@@ -11,6 +11,10 @@ body {
     height: 100px;
 }
 
+.working {
+    height: 40px;
+}
+
 .button-pad {
     font-size: 0;
 }

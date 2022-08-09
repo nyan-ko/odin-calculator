@@ -60,9 +60,8 @@ function evaluate() {
 }
 
 function onOperatorClick(e) {
-    // console.log(e.target.textContent);
-
     operator = e.target.textContent;
+    updateWorkingText();
 }
 
 function deleteButton(e) {
@@ -79,6 +78,7 @@ function clear() {
     operator = null;
     operand2 = null;
     setResultText("");
+    updateWorkingText();
 }
 
 function setResultText(txt) {
@@ -93,6 +93,7 @@ function appendDigit1(num) {
     else {
         operand1 += num;
     }
+    updateWorkingText();
 }
 
 function appendDigit2(num) {
@@ -102,16 +103,24 @@ function appendDigit2(num) {
     else {
         operand2 += num;
     }
+    updateWorkingText();
 }
 
 function removeDigit1() {
     if (operand1) {
         operand1 = operand1.substring(0, operand1.length - 1);
     }
+    updateWorkingText();
 }
 
 function removeDigit2() {
     if (operand2) {
         operand2 = operand2.substring(0, operand2.length - 1);
     }
+    updateWorkingText();
+}
+
+function updateWorkingText() {
+    const working = document.querySelector(".working");
+    working.textContent = `${operand1 ?? ""} ${operator ?? ""} ${operand2 ?? ""}`;
 }
