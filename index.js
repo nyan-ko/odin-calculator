@@ -23,6 +23,14 @@ function onNumberClick(e) {
     }
 }
 
+function onOperatorClick(e) {
+    if (!operand1) {
+        return;
+    }
+    operator = e.target.textContent;
+    updateWorkingText();
+}
+
 function evaluate() {
     if (!operand1 || !operator || !operand2) return;
 
@@ -57,11 +65,6 @@ function evaluate() {
     operator = null;
     operand2 = null;
     setResultText(result);
-}
-
-function onOperatorClick(e) {
-    operator = e.target.textContent;
-    updateWorkingText();
 }
 
 function deleteButton(e) {
