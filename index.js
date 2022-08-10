@@ -61,7 +61,7 @@ function evaluate() {
             result = operand1 % operand2;
             break;
     }
-    operand1 = result;
+    operand1 = "" + result;
     operator = null;
     operand2 = null;
     setResultText(result);
