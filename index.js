@@ -13,6 +13,8 @@ document.querySelectorAll(".number").forEach(number => {
 document.querySelector("#equals").addEventListener('click', evaluate);
 document.querySelector("#delete").addEventListener('click', deleteButton);
 document.querySelector("#clear").addEventListener('click', clear);
+document.querySelector("#negation").addEventListener('click', negate);
+document.querySelector("#decimal").addEventListener('click', decimal);
 
 function onNumberClick(e) {
     if (operator) {
@@ -82,6 +84,29 @@ function clear() {
     operand2 = null;
     setResultText("");
     updateWorkingText();
+}
+
+function negate() {
+    if (operator) {
+        operand2 = -1 * operand2;
+    }
+    else {
+        operand1 = -1 * operand1;
+    }
+    updateWorkingText();
+}
+
+function decimal() {
+    if (operator) {
+        if (!operand2.includes(".")) {
+            appendDigit2(".");
+        }
+    }
+    else {
+        if (!operand1.includes(".")) {
+            appendDigit1(".");
+        }
+    }
 }
 
 function setResultText(txt) {
